@@ -18,3 +18,15 @@ As a user
 So that I easily find related bookmarks
 I want to be able to filter bookmarks by their tag
 ```
+
+Domain Model
+------------
+
+Classes | Methods
+----|----
+BookmarkManager | .add
+  | .retrieve
+  | .filter
+  | .delete
+Bookmark | .tag
+  | .url
