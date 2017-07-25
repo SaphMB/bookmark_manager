@@ -4,7 +4,11 @@ User Stories
 ```
 As a user
 So that I can find pages I saved
-I want to access my existing bookmarks
+I want to see a list of my existing bookmarks
+
+As a user
+So that I can find the bookmark I want
+I want to be able to sort my bookmarks by date/title
 
 As a user
 So that I don’t have to remember URLs
@@ -30,3 +34,4 @@ BookmarkManager | .add
   | .delete
 Bookmark | .tag
   | .url
+  | .title
