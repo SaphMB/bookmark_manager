@@ -1,10 +1,18 @@
 <h1> Links </h1>
 
 <ul id='links'>
-  <% @links.each do |link| %>
-    <li>
-      Title: <%= link.title %>
-      URL:   <%= link.url   %>
-    </li>
-  <% end %>
+
 </ul>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>URL</th>
+  </tr>
+  <% @links.each do |link| %>
+  <tr>
+    <td style="border: 2px solid #dddddd"><%= link.title %></td>
+    <td style="border: 2px solid #dddddd"><%= link.url   %></td>
+  </tr>
+  <% end %>
+</table>
