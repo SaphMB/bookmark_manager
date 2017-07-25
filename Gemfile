@@ -4,6 +4,7 @@ source "https://rubygems.org"
 # gem "rails"
 gem "data_mapper"
 gem "sinatra"
+gem "dm-postgres-adapter"
 
 group :test do
   gem 'capybara'
