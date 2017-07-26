@@ -6,6 +6,7 @@ gem "data_mapper"
 gem "sinatra"
 gem "dm-postgres-adapter"
 gem 'rake'
+gem 'pg'
 
 group :test do
   gem 'capybara'
