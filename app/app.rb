@@ -1,15 +1,7 @@
 ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
-require 'data_mapper'
-require 'dm-postgres-adapter'
-
-DataMapper.setup(:default, 'postgres://localhost/bookmark_manager_test')
-
 require_relative './models/link.rb'
-
-DataMapper.finalize
-DataMapper.auto_upgrade!
 
 class Bookmarks < Sinatra::Base
 

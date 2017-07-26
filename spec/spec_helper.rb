@@ -11,7 +11,7 @@ Capybara.app = Bookmarks
 RSpec.configure do |config|
 
   config.before(:suite) do
-    DatabaseCleaner.clean_by(:truncation)
+    DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
   end
 
