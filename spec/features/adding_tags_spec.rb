@@ -3,7 +3,7 @@ feature 'FEATURE: adding tags' do
     visit('/links/new')
     fill_in :url, with: "www.google.com"
     fill_in :title, with: "Google"
-    fill_in :tag, with: "Browser"
+    fill_in :tags, with: "Browser"
     click_button "Submit"
     expect(page).to have_content('Browser')
   end

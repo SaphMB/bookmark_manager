@@ -6,6 +6,7 @@ gem "dm-postgres-adapter"
 gem 'pg'
 
 group :test do
+  gem 'pry'
   gem 'capybara'
   gem 'rspec'
   gem 'database_cleaner'
