@@ -1,4 +1,4 @@
-ENV['RACK_ENV'] = 'test'
+ENV["RACK_ENV"] = "test"
 
 require 'capybara/rspec'
 require 'capybara'
@@ -6,7 +6,7 @@ require 'rspec'
 require 'database_cleaner'
 require_relative '../app/app.rb'
 
-Capybara.app = Bookmarks
+Capybara.app = Bookmark
 
 RSpec.configure do |config|
 

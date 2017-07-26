@@ -1,9 +1,9 @@
-ENV['RACK_ENV'] ||= 'development'
+# ENV["RACK_ENV"] = "development"
 
 require 'sinatra/base'
 require_relative './models/link.rb'
 
-class Bookmarks < Sinatra::Base
+class Bookmark < Sinatra::Base
 
   get '/' do
 
