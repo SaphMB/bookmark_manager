@@ -8,12 +8,13 @@
   <tr>
     <th>Title</th>
     <th>URL</th>
+    <th>Tags</th>
   </tr>
   <% @links.each do |link| %>
   <tr>
     <td style="border: 2px solid #dddddd"><%= link.title %></td>
     <td style="border: 2px solid #dddddd"><%= link.url   %></td>
-    <td style="border: 2px solid #dddddd"><%= link.tags.map { |tag| tag.name }.join("-") %></td>
+    <td style="border: 2px solid #dddddd"><%= link.tags.map { |tag| tag.name }.join(", ") %></td>
   </tr>
   <% end %>
 </table>
