@@ -5,6 +5,7 @@ require 'capybara'
 require 'rspec'
 require 'pry'
 require 'database_cleaner'
+require_relative './features/web_helpers'
 require_relative '../app/app.rb'
 
 Capybara.app = Bookmark

@@ -4,6 +4,7 @@ require 'sinatra/base'
 require_relative './models/link.rb'
 require_relative './models/tag.rb'
 require_relative 'data_mapper_setup.rb'
+require 'pry'
 
 class Bookmark < Sinatra::Base
 
@@ -13,7 +14,7 @@ class Bookmark < Sinatra::Base
 
   get '/links' do
     @links = Link.all
-    erb :links
+    erb :'links/index'
   end
 
   get '/links/new' do
@@ -26,6 +27,11 @@ class Bookmark < Sinatra::Base
     link.tags << tag
     link.save
     redirect '/links'
+  end
+
+  get '/tags/:name' do
+    tag = Tag.first(name: params[:name])
+    erb :'links/index'
   end
 
 end
