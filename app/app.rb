@@ -7,6 +7,14 @@ require_relative 'data_mapper_setup.rb'
 
 class Bookmark < Sinatra::Base
 
+  get '/' do
+    erb :login
+  end
+
+  post '/links' do
+    redirect '/links'
+  end
+
   get '/links' do
     @links = Link.all
     erb :'links/index'
