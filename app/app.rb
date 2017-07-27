@@ -8,9 +8,9 @@ require 'pry'
 
 class Bookmark < Sinatra::Base
 
-  get '/' do
-
-  end
+  # get '/' do
+  #
+  # end
 
   get '/links' do
     @links = Link.all
