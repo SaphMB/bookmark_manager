@@ -1,21 +1,23 @@
 ENV["RACK_ENV"] ||= "development"
 
 require 'sinatra/base'
+require 'bcrypt'
 require_relative 'data_mapper_setup.rb'
 
 class Bookmark < Sinatra::Base
 enable :sessions
-  def current_user
-    @current_user = User.get(session[:id])
-  end
+set :session_secret, 'super-secret'
 
+  def current_user
+    @current_user ||= User.get(session[:id])
+  end
 
   get '/' do
     erb :login
   end
 
   post '/logged_in' do
-    user = User.create(name: params[:name], email_address: params[:email_address], password: params[:password])
+    user = User.create(name: params[:name], email_address: params[:email_address], password: (params[:password]))
     session[:id] = user.id
     redirect '/links'
 
