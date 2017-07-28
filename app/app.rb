@@ -17,10 +17,9 @@ set :session_secret, 'super-secret'
   end
 
   post '/logged_in' do
-    user = User.create(name: params[:name], email_address: params[:email_address], password: (params[:password]))
+    user = User.create(name: params[:name], email_address: params[:email_address], password: params[:password], password_confirmation: params[:password_confirmation])
     session[:id] = user.id
-    redirect '/links'
-
+    redirect '/links' if params[:password_confirmation] == params[:password]
   end
 
   get '/links' do

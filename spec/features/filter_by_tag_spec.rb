@@ -1,6 +1,6 @@
 feature 'filtering by tag' do
   scenario 'can filter by the tag bubbles' do
-    login('user', 'user@user.com', 'password123')
+    login('user', 'user@user.com', 'password123', 'password123')
     add_a_link("www.google.com", "Google", "browser")
     add_a_link("www.bubbles.com", "Bubbles", "bubbles")
     visit('tags/bubbles')
