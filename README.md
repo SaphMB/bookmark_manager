@@ -23,15 +23,15 @@ So that I easily find related bookmarks
 I want to be able to filter bookmarks by their tag
 ```
 
-Domain Model
+Getting Started
 ------------
 
-Classes | Methods
-----|----
-BookmarkManager | .add
-  | .retrieve
-  | .filter
-  | .delete
-Bookmark | .tag
-  | .url
-  | .title
+* Clone the repo
+* Bundle install
+* $ createdb bookmark_manager_test
+* $ createdb bookmark_manager_development
+
+To access online
+  ------------
+
+  To access online, visit https://fast-earth-77029.herokuapp.com
