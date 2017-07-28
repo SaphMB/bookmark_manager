@@ -1,8 +1,6 @@
 ENV["RACK_ENV"] ||= "development"
 
 require 'sinatra/base'
-require_relative './models/link.rb'
-require_relative './models/tag.rb'
 require_relative 'data_mapper_setup.rb'
 
 class Bookmark < Sinatra::Base
@@ -11,11 +9,14 @@ class Bookmark < Sinatra::Base
     erb :login
   end
 
-  post '/links' do
+  post '/logged_in' do
+    @name = params[:name]
+    user = User.create(name: @name, email_address: params[:email_address], password: params[:password])
     redirect '/links'
   end
 
   get '/links' do
+    @user = User.first
     @links = Link.all
     erb :'links/index'
   end
@@ -35,6 +36,7 @@ class Bookmark < Sinatra::Base
   end
 
   get '/tags/:name' do
+    @user = User.first
     tag = Tag.first(name: params[:name])
     @links = tag ? tag.links : []
     erb :'links/index'
